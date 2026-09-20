@@ -15,12 +15,30 @@ from django.db import models
         varchar(M)
         M就是选项
 '''
-class Book(models.Model):
+class BookInfo(models.Model):
     # id
     name = models.CharField(max_length=10)
+
+    # 重写str方法以让admin来显示书籍名字
+    def __str__(self):
+        return self.name
 
 class PeopleInfo(models.Model):
     name = models.CharField(max_length=10)
     gender = models.BooleanField()
     # 外键的表：人物属于哪本书
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    book = models.ForeignKey(BookInfo, on_delete=models.CASCADE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

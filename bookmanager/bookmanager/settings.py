@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-6p=$=%-j95r62@u4yj8d!$m#g^t)vlge54*j5(p1!)2fkmp!y9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# 默认是127.0.0.1
 ALLOWED_HOSTS = []
 
 
@@ -73,6 +74,8 @@ WSGI_APPLICATION = 'bookmanager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+# sqlite3 关系型数据库
+# 过渡了解
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -103,9 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# 设置语言
+LANGUAGE_CODE = 'zh-Hans'
+# 设置时区
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
