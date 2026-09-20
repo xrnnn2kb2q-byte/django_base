@@ -9,7 +9,9 @@ from django.shortcuts import render
         1.视图函数的第一个参数就是接收请求
         2.必须返回一个响应
 """
+
 # request
+
 from django.http import HttpRequest
 from django.http import HttpResponse
 
@@ -17,5 +19,4 @@ from django.http import HttpResponse
 # 来访问视图函数
 
 def index(request):
-
     return HttpResponse('ok')

@@ -15,6 +15,7 @@ from django.db import models
         varchar(M)
         M就是选项
 '''
+
 class BookInfo(models.Model):
     # id
     name = models.CharField(max_length=10)
