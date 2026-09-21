@@ -32,6 +32,9 @@ class BookInfo(models.Model):
     readcount = IntegerField(default=0)
     commentcount = IntegerField(default=0)
     is_delete = models.BooleanField(default=False)
+    # 一对多的关系模型中
+    # 系统会为我们自动添加一个 关联模型类名小写_set
+    # peopleinfo_set = [PeopleInfo, PeopleInfo, ...]
 
     class Meta:
         db_table = 'bookinfo' # 修改表的名字
