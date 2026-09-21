@@ -3,5 +3,6 @@ from book import views
 
 urlpatterns = [
     path('create/',views.create_book),
-    path('<city_id>/<shop_id>',views.shop)
+    path('<city_id>/<shop_id>',views.shop),
+    path('register/',views.register)
 ]

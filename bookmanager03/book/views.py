@@ -33,3 +33,20 @@ def shop(request,city_id, shop_id):
     
     
 '''
+
+def register(request):
+    data = request.POST
+    print(data)
+    return HttpResponse("register")
+
+def json(request):
+    # request.POST json数据不能通过request.POST获取数据
+    body = request.body
+    print(body.decode())
+
+    # JSON形式的字符串 可以转换为 python的字典
+    import json
+    body_dict = json.loads(body.decode())
+    print(body_dict)
+
+    return HttpResponse('json')
