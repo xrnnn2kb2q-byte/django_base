@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from book.models import BookInfo
 
 # Create your views here.
@@ -57,7 +57,10 @@ def response(request):
     import json
     data = json.dumps(girl_friends)
     response = HttpResponse(data)
-    return response
+    # return response
+
+    return redirect('http://www.itcast.cn')
+
 
     # 1xx
     # 2xx
