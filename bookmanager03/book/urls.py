@@ -36,6 +36,7 @@ urlpatterns = [
 
     #######################类视图#########################
     path('163login/',views.LoginView.as_view()),
+    path('order/',views.OrderView.as_view()),
 ]
 
 '''
