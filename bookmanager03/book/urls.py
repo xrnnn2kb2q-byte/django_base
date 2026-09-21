@@ -32,6 +32,10 @@ urlpatterns = [
     path('get_cookie/',views.get_cookie),
     path('set_session/',views.set_session),
     path('get_session/',views.get_session),
+    path('login/',views.login),
+
+    #######################类视图#########################
+    path('163login/',views.LoginView.as_view()),
 ]
 
 '''

@@ -178,3 +178,37 @@ def get_session(request):
 
     return HttpResponse(content)
 
+##############################类视图###################################
+
+def login(request):
+    # print(request.method)
+    if request.method == "GET":
+        return HttpResponse('get 逻辑')
+    else:
+        return HttpResponse("post 逻辑")
+
+
+"""
+    类视图的定义
+    
+    class 类视图名字(View):
+        
+        def get(self,request):
+            return HttpResponse("xxx")
+            
+        def http_method_lower(self,request):
+            return HttpResponse('xxx')
+    
+    1. 继承自View
+    2. 类视图中的方法 是采用 http方法小写来区分不同的请求方式
+"""
+
+from django.views import View
+
+class LoginView(View):
+
+    def get(self,request):
+        return HttpResponse('get get get')
+
+    def post(self,request):
+        return HttpResponse('post post post')
