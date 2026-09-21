@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        第一步：导入 vue.js 先导入 vue.js 所以在head中导入
+        第二步：定义一个标签
+        第三步：创建vue实例 让vue实例 获取 HTML
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 这里写 HTML 的相关内容 -->
+         <!-- {{ }} 语法形式：胡子语法 {{变量名}} -->
+         {{message}}
+         <a href="#">{{info}}</a>
+    </div>
+</body>
+<script type="text/javascript">
+    //
+    /*
+        var app 定义一个变量
+        new Vue()实例化
+        el: '#app' 相当于 js document.getElementById('app')
+            获取div标签
+        data:变量
+    */
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:'hello vue',
+            info:'请登录'
+        }
+    })
+</script>
+</html>

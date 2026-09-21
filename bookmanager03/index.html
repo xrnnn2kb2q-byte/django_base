@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- head 这里导入 先导入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+      {{message}}
+      [[message]]
+      <hr>
+      <a v-bind:href="next">点击有惊喜</a>
+      <hr>
+      <a href="#" v-if="isLogin">个人中心</a>
+      <a href="#" v-else>登录</a>
+      <hr>
+      <a href="#" v-if="level===1">皇帝</a>
+      <a href="#" v-else-if="level===2">皇亲</a>
+      <a href="#" v-else-if="level===3">国戚</a>
+      <a href="#" v-else-if="level===4">大臣</a>
+      <a href="#" v-else>平民</a>
+      <hr>
+      <span v-if="seen">if</span>
+      <span v-show="seen">show</span>
+
+    </div>
+</body>
+<script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      delimiters:['[[',']]'],   // delimeters 分隔符 [开始的分隔符,结束的分隔符]
+      data: {
+        message:'hello',
+        next: 'http://www.itcast.cn',
+        isLogin: true,
+        level: 2,
+        seen: false
+      }
+    })
+</script>
+</html>
