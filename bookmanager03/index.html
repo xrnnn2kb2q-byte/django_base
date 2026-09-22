@@ -24,19 +24,53 @@
       <hr>
       <span v-if="seen">if</span>
       <span v-show="seen">show</span>
+      <hr>
+      <ul>
+          <!-- v-for='变量名 in 列表变量名' -->
+          <!-- <li v-for="shop in shops">[[shop]]</li>-->
+
+          <!-- v-for='(列表元素,索引) in 变量名' -->
+          <!-- <li v-for="(shop,index) in shops">第{{index+1}}家店:{{shop}}</li>-->
+
+          <!-- v-for='(值,key) in 变量名' -->
+          <li v-for="(value,name) in object">{{name}}:{{value}}</li>
+      </ul>
+      <hr>
+      <button v-on:click="counter+=1">Add 1</button>
+      <span>this is result {{counter}}</span>
+
+      <button v-on:click="login">注册</button>
+      <hr>
+      <button v-on:click="sayHi('ruhua')">sayHi</button>
 
     </div>
 </body>
 <script type="text/javascript">
     var app = new Vue({
       el: '#app',
-      delimiters:['[[',']]'],   // delimeters 分隔符 [开始的分隔符,结束的分隔符]
+      // delimiters:['[[',']]'],   // delimeters 分隔符 [开始的分隔符,结束的分隔符]
       data: {
         message:'hello',
         next: 'http://www.itcast.cn',
         isLogin: true,
         level: 2,
-        seen: false
+        seen: false,
+        // shops:['北京','广州','深圳','上海','铁岭']
+        object:{
+            title:'How to do lists in Vue',
+            author:'Jane Doe',
+            publishedAt:'2016-04-10'
+        },
+        counter:1
+      },
+      methods:{
+          // 函数
+          login:function (){
+              alert('登陆中~~~')
+          },
+          sayHi:function (message){
+              alert(message)
+          }
       }
     })
 </script>
