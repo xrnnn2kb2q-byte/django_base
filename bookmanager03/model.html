@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <table border="2px">
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" name="" v-model="username"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="" v-model="password"></td>
+        <tr>
+            <td>确认密码</td>
+            <td><input type="password" name="" v-model="certifypwd"></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>
+              男<input type="radio" name="sex" value="boy" v-model="sex">
+              女<input type="radio" name="sex" value="girl" v-model="sex">
+            </td>
+        </tr>
+        <tr>
+            <td>爱好</td>
+            <td>
+                足球<input type="checkbox" value="football" v-model="like">
+                篮球<input type="checkbox" value="bastketball" v-model="like">
+                乒乓球<input type="checkbox" value="pingpong" v-model="like">
+            </td>
+        </tr>
+        <tr>
+            <td>城市</td>
+            <td>
+                <select  v-model="city">
+                    <option value="11000">北京</option>
+                    <option value="12000">上海</option>
+                    <option value="13000">广州</option>
+                    <option value="14000">深圳</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>个人简介</td>
+            <td>
+                <textarea  v-model="desc"></textarea>
+            </td>
+        </tr>
+
+    </table>
+    <button v-on:click="register">注册</button>
+</div>
+</body>
+<script type="text/javascript">
+    var app = new Vue({
+      el:'#app',
+      data:{
+        message:'hello',
+        username:'',
+        password:'',
+        verifypwd:'', // 确认密码
+        sex:'',     // 性别
+        city:'',    // 城市
+        like:[],    // 爱好  特别注意：like用列表
+        desc:'',    // 描述
+      },
+      methods:{
+          register:function (){
+              // this 表示当前的Vue实例
+              // 使用 vue中的data变量的时候 使用 this.变量名
+              alert(this.username+this.password+this.verifypwd+this.city+this.sex+this.desc+this.like)
+          }
+      }
+    })
+</script>
+</html>
